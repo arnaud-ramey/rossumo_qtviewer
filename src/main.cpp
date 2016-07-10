@@ -1,8 +1,8 @@
 /*!
-  \\file        main.cpp
-  \\author      Arnaud Ramey <arnaud.a.ramey@gmail.com>
+  \file        main.cpp
+  \author      Arnaud Ramey <arnaud.a.ramey@gmail.com>
                 -- Robotics Lab, University Carlos III of Madrid
-  \\date        2016/7/8
+  \date        2016/7/8
 
 ________________________________________________________________________________
 

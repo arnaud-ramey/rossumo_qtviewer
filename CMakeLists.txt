@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(roswifibot_qtviewer)
+project(rossumo_qtviewer)
 # Debug, Release, RelWithDebInfo and MinSizeRe
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 # These find_package calls setup catkin_INCLUDE_DIRS and ROS_LIBRARIES and
 # all the component variables too (e.g. roscpp_INCLUDE_DIR?)
-SET(ROSDEPS cv_bridge image_transport roscpp qt_build std_msgs usb_cam)
+SET(ROSDEPS cv_bridge image_transport roscpp std_msgs usb_cam)
 find_package(catkin REQUIRED COMPONENTS ${ROSDEPS})
 # https://github.com/stonier/qt_ros/blob/indigo/qt_tutorials/CMakeLists.txt
 # this comes from qt_build's qt-ros.cmake which is automatically
@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS ${ROSDEPS})
 find_package(Qt4 COMPONENTS QtCore QtGui)
 catkin_package(CATKIN_DEPENDS ${ROSDEPS})
 include_directories(${catkin_INCLUDE_DIRS} ${QT_INCLUDES} ${PROJECT_BINARY_DIR})
-include_directories("/home/arnaud/catkin_ws/build/roswifibot_qtviewer")
+include_directories("/home/arnaud/catkin_ws/build/rossumo_qtviewer")
 message("QT_INCLUDES:${QT_INCLUDES}")
 message("PROJECT_BINARY_DIR:${PROJECT_BINARY_DIR}")
 

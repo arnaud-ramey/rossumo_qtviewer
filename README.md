@@ -1,4 +1,6 @@
-# rossumo
+# rossumo_qtviewer
+
+![Capture](doc/capture.png)
 
 Description
 ===========
@@ -9,5 +11,3 @@ Licence
 =======
 
 LGPL v3 (GNU Lesser General Public License version 3).
-See LICENCE.
-

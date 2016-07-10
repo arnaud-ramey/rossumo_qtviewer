@@ -1,8 +1,8 @@
 /*!
-  \\file        mainwindow.cpp
-  \\author      Arnaud Ramey <arnaud.a.ramey@gmail.com>
+  \file        mainwindow.cpp
+  \author      Arnaud Ramey <arnaud.a.ramey@gmail.com>
                 -- Robotics Lab, University Carlos III of Madrid
-  \\date        2016/7/8
+  \date        2016/7/8
 
 ________________________________________________________________________________
 
@@ -27,8 +27,14 @@ MainWindow::MainWindow(QNode *node, QWidget *parent) :
   qnode(node),
   ui(new Ui::MainWindow) {
   ui->setupUi(this);
+  // https://doc.qt.io/qt-4.8/signalsandslots.html
   QObject::connect(qnode, SIGNAL(rosShutdown()), this, SLOT(close()));
-  QObject::connect(qnode, SIGNAL(imageReceived()), this, SLOT(refresh_rgb()));
+  QObject::connect(qnode, SIGNAL(alertReceived(QString)), this, SLOT(refresh_alert(QString)));
+  QObject::connect(qnode, SIGNAL(batteryReceived(uchar)), this, SLOT(refresh_battery(uchar)));
+  QObject::connect(qnode, SIGNAL(linkReceived(uchar)), this, SLOT(refresh_link(uchar)));
+  QObject::connect(qnode, SIGNAL(postureReceived(QString)), this, SLOT(refresh_posture(QString)));
+  QObject::connect(qnode, SIGNAL(robot_nameReceived(QString)), this, SLOT(refresh_robot_name(QString)));
+  QObject::connect(qnode, SIGNAL(rgbReceived()), this, SLOT(refresh_rgb()));
   qnode->init(this);
 }
 
@@ -39,7 +45,6 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::refresh_rgb() {
-  //ROS_INFO("refresh_rgb()");
   qnode->_mutex.lock();
   ui->rgbDisplay->setPixmap(QPixmap::fromImage(qnode->_rgb));
   qnode->_mutex.unlock();

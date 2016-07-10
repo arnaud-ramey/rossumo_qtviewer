@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>roswifibot_qtviewer</name>
+  <name>rossumo_qtviewer</name>
   <version>0.0.0</version>
-  <description>The roswifibot_qtviewer package</description>
-  <maintainer email="arnaud@todo.todo">arnaud</maintainer>
-  <license>TODO</license>
+  <description>
+    "rossumo_qtviewer" is a Qt interface
+    for the "roswifibot" package.
+  </description>
+  <maintainer email="arnaud.a.ramey@gmail.com">Arnaud RAMEY</maintainer>
+  <license>LGPLv3</license>
   <buildtool_depend>catkin</buildtool_depend>
   <depend>cv_bridge</depend>
   <depend>image_transport</depend>
-  <depend>qt_build</depend>
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
   <depend>usb_cam</depend>
