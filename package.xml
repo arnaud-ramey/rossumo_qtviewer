@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>roswifibot_qtviewer</name>
+  <version>0.0.0</version>
+  <description>The roswifibot_qtviewer package</description>
+  <maintainer email="arnaud@todo.todo">arnaud</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>qt_build</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>usb_cam</depend>
+  <depend>libqt4-dev</depend>
+  <export>
+  </export>
+</package>
