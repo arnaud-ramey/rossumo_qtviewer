@@ -1,0 +1,11 @@
+<launch>
+<arg name="robot" default="rossumo1" />
+<include file="$(find rossumo)/launch/rossumo.launch"/>
+<include file="$(find rossumo)/launch/joy_teleop.launch"/>
+<group ns="$(arg robot)">
+  <node pkg="rossumo_qtviewer" type="mainwindow" name="mainwindow"  output="screen" required="true"
+        args="">
+    <remap from="rgb" to="camera/image_raw"/>
+  </node>
+</group>
+</launch>
