@@ -4,7 +4,7 @@ project(rossumo_qtviewer)
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 # These find_package calls setup catkin_INCLUDE_DIRS and ROS_LIBRARIES and
 # all the component variables too (e.g. roscpp_INCLUDE_DIR?)
-SET(ROSDEPS cv_bridge image_transport roscpp std_msgs usb_cam)
+SET(ROSDEPS cv_bridge image_transport roscpp std_msgs)
 find_package(catkin REQUIRED COMPONENTS ${ROSDEPS})
 # https://github.com/stonier/qt_ros/blob/indigo/qt_tutorials/CMakeLists.txt
 # this comes from qt_build's qt-ros.cmake which is automatically

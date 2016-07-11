@@ -13,7 +13,6 @@
   <depend>image_transport</depend>
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
-  <depend>usb_cam</depend>
   <depend>libqt4-dev</depend>
   <export>
   </export>

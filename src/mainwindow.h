@@ -80,9 +80,9 @@ public:
 
   ~QNode() {
     if(ros::isStarted()) {
-      ros::shutdown(); // explicitly needed since we use ros::start();
-      ros::waitForShutdown();
-    }
+        ros::shutdown(); // explicitly needed since we use ros::start();
+        ros::waitForShutdown();
+      }
     delete _it;
   }
 
@@ -128,7 +128,10 @@ public:
     _mutex.lock();
     _rgbdata = msg->data; // deep copy
     // https://doc.qt.io/qt-4.8/qimage.htmlhttps://doc.qt.io/qt-4.8/qimage.html
-    _rgb = QImage(_rgbdata.data(), msg->width, msg->height, QImage::Format_RGB888).rgbSwapped();
+    if (msg->encoding == "bgr8")
+      _rgb = QImage(_rgbdata.data(), msg->width, msg->height, QImage::Format_RGB888).rgbSwapped();
+    else
+      _rgb = QImage(_rgbdata.data(), msg->width, msg->height, QImage::Format_RGB888);
     _mutex.unlock();
     Q_EMIT rgbReceived();
   }

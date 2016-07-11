@@ -1,0 +1,4 @@
+- git:
+    local-name: usb_cam
+    uri: https://github.com/bosch-ros-pkg/usb_cam.git
+
