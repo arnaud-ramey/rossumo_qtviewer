@@ -1,5 +1,7 @@
 # rossumo_qtviewer
 
+[![Build Status](https://travis-ci.org/arnaud-ramey/rossumo_qtviewer.svg)](https://travis-ci.org/arnaud-ramey/rossumo_qtviewer)
+
 ![Capture](doc/capture.png)
 
 Description
